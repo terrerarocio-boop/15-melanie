@@ -1,63 +1,112 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    background:#000;
-    color:#fff;
-    font-family:'Cormorant Garamond',serif;
+  font-family:'Cormorant Garamond',serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+  min-height:100vh;
+  background-image:
+    radial-gradient(circle at top,#444 0%,#111 35%,#000 100%);
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-    background:linear-gradient(180deg,#000,#111);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
 }
 
 .marco{
-    width:100%;
-    max-width:700px;
-    border:2px solid #c0c0c0;
-    border-radius:25px;
-    padding:50px 30px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(192,192,192,.3);
+  width:100%;
+  max-width:700px;
+  padding:50px 30px;
+  border:2px solid #c0c0c0;
+  border-radius:25px;
+  background:rgba(15,15,15,.85);
+  box-shadow:0 0 30px rgba(192,192,192,.25);
+  text-align:center;
 }
 
 h2{
-    font-size:40px;
-    color:#d9d9d9;
-    letter-spacing:4px;
+  color:#d9d9d9;
+  font-size:42px;
+  letter-spacing:6px;
 }
 
 h1{
-    font-family:'Great Vibes',cursive;
-    font-size:80px;
-    color:#fff;
-    margin:20px 0;
+  font-family:'Great Vibes',cursive;
+  font-size:82px;
+  color:#ffffff;
+  margin:20px 0;
+  text-shadow:0 0 15px rgba(255,255,255,.35);
 }
 
 .frase{
-    font-size:22px;
-    line-height:1.6;
-    margin-bottom:35px;
+  font-size:22px;
+  line-height:1.6;
+  margin:30px 0;
+  color:#ececec;
+}.datos{
+  margin-top:25px;
 }
 
 .datos p{
-    margin:12px 0;
-    font-size:24px;
+  font-size:24px;
+  margin:15px 0;
+  color:#f5f5f5;
 }
 
 .boton{
-    display:inline-block;
-    margin-top:35px;
-    padding:16px 40px;
-    color:#000;
-    background:#d9d9d9;
-    text-decoration:none;
-    border-radius:40px
+  display:inline-block;
+  margin-top:40px;
+  padding:16px 42px;
+  border:2px solid #c0c0c0;
+  border-radius:40px;
+  color:#fff;
+  text-decoration:none;
+  font-size:22px;
+  transition:.3s;
+  background:linear-gradient(135deg,#666,#c0c0c0,#666);
+  color:#000;
+  font-weight:bold;
+}
+
+.boton:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+@media(max-width:700px){
+
+  .marco{
+    padding:35px 20px;
+  }
+
+  h1{
+    font-size:60px;
+  }
+
+  h2{
+    font-size:32px;
+  }
+
+  .frase{
+    font-size:19px;
+  }
+
+  .datos p{
+    font-size:20px;
+  }
+
+  .boton{
+    width:100%;
+    font-size:20px;
+  }
+
+}
