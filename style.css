@@ -21,8 +21,10 @@ body{
     radial-gradient(circle at top,#333 0%,#050505 45%,#000 100%);
 }
 
-.card{
-  position:relative;
+  .card{
+    position: relative;
+    overflow: hidden;
+  }
   width:100%;
   max-width:720px;
   padding:50px 26px;
