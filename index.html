@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>15 Años de Melanie</title>
-
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
@@ -37,7 +36,7 @@
 
     <div class="contador">
       <p>Faltan</p>
-      <div id="cuenta">Cargando...</div>
+      <div id="cuenta">Calculando...</div>
     </div>
 
     <div class="botones">
@@ -56,12 +55,14 @@
 <script>
 const evento = new Date(2026, 7, 15, 22, 0, 0);
 
-function actualizarCuenta() {
+function actualizarCuenta(){
   const ahora = new Date();
   const diferencia = evento - ahora;
 
-  if (diferencia <= 0) {
-    document.getElementById("cuenta").innerHTML = "¡Llegó el gran día!";
+  const cuenta = document.getElementById("cuenta");
+
+  if(diferencia <= 0){
+    cuenta.innerHTML = "¡Llegó el gran día!";
     return;
   }
 
@@ -70,12 +71,12 @@ function actualizarCuenta() {
   const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
   const segundos = Math.floor((diferencia / 1000) % 60);
 
-  document.getElementById("cuenta").innerHTML =
-    dias + " días · " + horas + " hs · " + minutos + " min · " + segundos + " seg";
+  cuenta.innerHTML = dias + " días · " + horas + " hs · " + minutos + " min · " + segundos + " seg";
 }
 
 actualizarCuenta();
 setInterval(actualizarCuenta, 1000);
 </script>
+
 </body>
 </html>
