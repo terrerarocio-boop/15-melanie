@@ -5,113 +5,192 @@
 }
 
 body{
-  font-family:'Cormorant Garamond',serif;
   background:#000;
-  color:#fff;
+  color:white;
+  font-family:'Cormorant Garamond',serif;
   overflow-x:hidden;
-  min-height:100vh;
-  background-image:
-    radial-gradient(circle at top,#444 0%,#111 35%,#000 100%);
 }
 
 .hero{
   min-height:100vh;
+  padding:28px;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:30px;
+  background:
+    radial-gradient(circle at top,#333 0%,#050505 45%,#000 100%);
 }
 
-.marco{
+.card{
+  position:relative;
   width:100%;
-  max-width:700px;
-  padding:50px 30px;
-  border:2px solid #c0c0c0;
-  border-radius:25px;
-  background:rgba(15,15,15,.85);
-  box-shadow:0 0 30px rgba(192,192,192,.25);
+  max-width:720px;
+  padding:50px 26px;
   text-align:center;
+  border:2px solid #bfbfbf;
+  border-radius:34px;
+  background:rgba(0,0,0,.88);
+  box-shadow:
+    0 0 35px rgba(255,255,255,.18),
+    inset 0 0 30px rgba(255,255,255,.06);
+  overflow:hidden;
 }
 
-h2{
-  color:#d9d9d9;
-  font-size:42px;
-  letter-spacing:6px;
+.card:before,
+.card:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%);
+  filter:blur(25px);
+  opacity:.35;
+}
+
+.card:before{
+  top:-70px;
+  left:-70px;
+}
+
+.card:after{
+  bottom:-70px;
+  right:-70px;
+}
+
+.intro{
+  font-size:18px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:#dcdcdc;
+  margin-bottom:18px;
+}
+
+.numero{
+  font-size:110px;
+  line-height:.85;
+  font-weight:700;
+  color:#f5f5f5;
+  text-shadow:0 0 18px rgba(255,255,255,.45);
+}
+
+.anos{
+  font-family:'Great Vibes',cursive;
+  font-size:58px;
+  margin-top:-10px;
+  color:#e5e5e5;
 }
 
 h1{
   font-family:'Great Vibes',cursive;
-  font-size:82px;
-  color:#ffffff;
-  margin:20px 0;
-  text-shadow:0 0 15px rgba(255,255,255,.35);
+  font-size:86px;
+  color:white;
+  margin:20px 0 28px;
+  text-shadow:0 0 20px rgba(255,255,255,.4);
 }
 
 .frase{
-  font-size:22px;
+  font-size:23px;
   line-height:1.6;
-  margin:30px 0;
-  color:#ececec;
-}.datos{
-  margin-top:25px;
+  margin-bottom:28px;
 }
 
-.datos p{
-  font-size:24px;
-  margin:15px 0;
-  color:#f5f5f5;
+.info p{
+  font-size:23px;
+  margin:13px 0;
+}
+
+.contador{
+  margin:32px 0 24px;
+  padding:18px;
+  border-top:1px solid rgba(255,255,255,.35);
+  border-bottom:1px solid rgba(255,255,255,.35);
+}
+
+.contador p{
+  font-size:20px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+#cuenta{
+  margin-top:10px;
+  font-size:23px;
+  color:#f1f1f1;
+}
+
+.botones{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:28px;
 }
 
 .boton{
-  display:inline-block;
-  margin-top:40px;
-  padding:16px 42px;
-  border:2px solid #c0c0c0;
+  display:block;
+  width:100%;
+  padding:17px 20px;
   border-radius:40px;
-  color:#fff;
   text-decoration:none;
-  font-size:22px;
+  font-size:23px;
+  font-weight:700;
   transition:.3s;
-  background:linear-gradient(135deg,#666,#c0c0c0,#666);
+}
+
+.principal{
+  background:linear-gradient(135deg,#777,#f2f2f2,#777);
   color:#000;
-  font-weight:bold;
+}
+
+.secundario{
+  border:2px solid #bfbfbf;
+  color:white;
+  background:rgba(255,255,255,.04);
 }
 
 .boton:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px rgba(255,255,255,.5);
+  transform:scale(1.03);
 }
 
-@media(max-width:700px){
+.sparkles{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#ccc 1px,transparent 1px);
+  background-size:60px 60px,95px 95px;
+  opacity:.18;
+  animation:brillo 12s linear infinite;
+}
 
-  .marco{
-    padding:35px 20px;
+@keyframes brillo{
+  from{transform:translateY(0);}
+  to{transform:translateY(-80px);}
+}
+
+@media(max-width:600px){
+  .card{
+    padding:42px 22px;
+  }
+
+  .numero{
+    font-size:92px;
+  }
+
+  .anos{
+    font-size:50px;
   }
 
   h1{
-    font-size:60px;
+    font-size:72px;
   }
 
-  h2{
-    font-size:32px;
-  }
-
-  .frase{
-    font-size:19px;
-  }
-
-  .datos p{
+  .frase,
+  .info p,
+  .boton,
+  #cuenta{
     font-size:20px;
   }
-
-  .boton{
-    width:100%;
-    font-size:20px;
-  }
-
 }
-.boton-secundario{
-  margin-top:18px;
-  background:transparent;
-  color:#fff;
-}
+  
