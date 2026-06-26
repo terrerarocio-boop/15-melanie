@@ -1,21 +1,21 @@
-const evento = new Date("August 15, 2026 22:00:00").getTime();
+const evento = new Date("2026-08-15T22:00:00");
 
-function actualizarCuenta(){
-  const ahora = new Date().getTime();
-  const distancia = evento - ahora;
+function actualizarCuenta() {
+  const ahora = new Date();
+  const diferencia = evento - ahora;
 
-  if(distancia <= 0){
-    document.getElementById("cuenta").innerHTML = "¡Hoy es la gran noche!";
+  if (diferencia <= 0) {
+    document.getElementById("cuenta").textContent = "¡Llegó el gran día!";
     return;
   }
 
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-  document.getElementById("cuenta").innerHTML =
-    dias + " días · " + horas + " hs · " + minutos + " min · " + segundos + " seg";
+  document.getElementById("cuenta").textContent =
+    `${dias} días · ${horas} hs · ${minutos} min · ${segundos} seg`;
 }
 
 actualizarCuenta();
