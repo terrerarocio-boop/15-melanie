@@ -193,4 +193,61 @@ h1{
     font-size:20px;
   }
 }
+.card{
+  animation:entrada 1.3s ease;
+}
+
+@keyframes entrada{
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(.96);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.musica-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:2px solid #c0c0c0;
+  background:#000;
+  color:#fff;
+  font-size:25px;
+  z-index:999;
+}
+
+.gracias{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  z-index:1000;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+}
+
+.gracias div{
+  border:2px solid #c0c0c0;
+  border-radius:25px;
+  padding:35px 25px;
+  background:#050505;
+  box-shadow:0 0 30px rgba(255,255,255,.25);
+}
+
+.gracias h2{
+  font-size:34px;
+}
+
+.gracias p{
+  font-size:22px;
+  margin-top:15px;
+}
   
