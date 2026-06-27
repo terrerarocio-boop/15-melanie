@@ -119,14 +119,15 @@ h2 {
   text-shadow: 0 0 15px white;
 }
 .numero{
-    font-size:95px;
-    font-weight:bold;
-    background:linear-gradient(180deg,#ffffff,#d9d9d9,#8f8f8f,#ffffff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-family: "Cinzel", serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: #ececec;
+    letter-spacing: -3px;
     text-shadow:
-        0 0 4px rgba(255,255,255,.25),
-        0 0 10px rgba(255,255,255,.15);
+        0 1px 0 #ffffff,
+        0 2px 3px rgba(255,255,255,.25),
+        0 0 8px rgba(255,255,255,.18);
 }
 
 .nombre{
