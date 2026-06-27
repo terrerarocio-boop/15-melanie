@@ -23,11 +23,11 @@ body::after {
   position: fixed;
   top: -40%;
   left: -90%;
-  width: 55%;
+  width: 45%;
   height: 180%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.10), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.07), transparent);
   transform: rotate(25deg);
-  animation: brillo 9s infinite linear;
+  animation: brillo 11s infinite linear;
   pointer-events: none;
 }
 
@@ -161,3 +161,17 @@ h2 {
     font-size:16px;
     opacity:.7;
 }
+.firma{
+  margin-top: 35px;
+  text-align: center;
+}
+
+.numero{
+  margin-top: 0;
+  line-height: .9;
+}
+
+.nombre{
+  margin-top: -18px;
+}
+
