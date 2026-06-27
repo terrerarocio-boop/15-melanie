@@ -22,12 +22,12 @@ body::after {
   content: "";
   position: fixed;
   top: -40%;
-  left: -80%;
-  width: 80%;
+  left: -90%;
+  width: 55%;
   height: 180%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.10), transparent);
   transform: rotate(25deg);
-  animation: brillo 7s infinite linear;
+  animation: brillo 9s infinite linear;
   pointer-events: none;
 }
 
