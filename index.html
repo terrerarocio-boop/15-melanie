@@ -1,104 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>15 Años de Melanie</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 Melanie</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="card">
+  <section class="invitacion">
 
-    <div class="sparkles"></div>
-
-    <p class="intro">Estás invitado a celebrar mis</p>
-
-    <div class="numero">15</div>
-    <div class="anos">Años</div>
-
-    <h1>Melanie</h1>
+    <div class="decoracion">♛</div>
 
     <p class="frase">
-      Hay momentos que solo se viven una vez...<br>
-      Te invito a compartir conmigo una noche inolvidable.
+      Hay momentos que solo se viven<br>
+      una vez...<br>
+      Te invito a compartir conmigo<br>
+      una noche inolvidable.
     </p>
 
-    <div class="info">
-      <p>📅 Sábado 15 de agosto de 2026</p>
+    <div class="linea">♡</div>
+
+    <div class="datos">
+      <p>🗓️ Sábado 15 de agosto de 2026</p>
       <p>🕙 22:00 hs</p>
       <p>📍 Salón de Eventos AMSA</p>
       <p>📌 Gobernador Gregores 970</p>
     </div>
 
-    <div class="contador">
-      <p>Faltan</p>
-      <div id="cuenta">Calculando...</div>
+    <div class="linea">♡</div>
+
+    <h2>FALTAN</h2>
+
+    <div id="contador" class="contador">
+      <div><span id="dias">00</span><small>DÍAS</small></div>
+      <div><span id="horas">00</span><small>HS</small></div>
+      <div><span id="minutos">00</span><small>MIN</small></div>
+      <div><span id="segundos">00</span><small>SEG</small></div>
     </div>
 
-    <div class="botones">
-      <a class="boton principal" href="https://forms.gle/izKcubHBGhyqqTuy9" target="_blank" onclick="mostrarGracias()">
-  Confirmar asistencia
-      </a>
+    <a class="boton" href="https://wa.me/5492966534340?text=Confirmo%20mi%20asistencia%20a%20los%2015%20de%20Melanie" target="_blank">
+      🟢 Confirmar asistencia
+    </a>
 
-      <a class="boton secundario" href="https://www.google.com/maps/search/?api=1&query=Gobernador%20Gregores%20970%20AMSA" target="_blank">
-        Cómo llegar
-      </a>
+    <a class="boton secundario" href="https://maps.google.com/?q=Gobernador+Gregores+970" target="_blank">
+      📍 Cómo llegar
+    </a>
+
+    <div class="firma">
+      <div class="numero">15</div>
+      <div class="nombre">Melanie</div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<script>
-const evento = new Date(2026, 7, 15, 22, 0, 0);
+  <script>
+    const fechaEvento = new Date("August 15, 2026 22:00:00").getTime();
 
-function actualizarCuenta(){
-  const ahora = new Date();
-  const diferencia = evento - ahora;
+    setInterval(function () {
+      const ahora = new Date().getTime();
+      const distancia = fechaEvento - ahora;
 
-  const cuenta = document.getElementById("cuenta");
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-  if(diferencia <= 0){
-    cuenta.innerHTML = "¡Llegó el gran día!";
-    return;
-  }
+      document.getElementById("dias").innerHTML = dias;
+      document.getElementById("horas").innerHTML = horas;
+      document.getElementById("minutos").innerHTML = minutos;
+      document.getElementById("segundos").innerHTML = segundos;
+    }, 1000);
+  </script>
 
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-  const segundos = Math.floor((diferencia / 1000) % 60);
-
-  cuenta.innerHTML = dias + " días · " + horas + " hs · " + minutos + " min · " + segundos + " seg";
-}
-
-actualizarCuenta();
-setInterval(actualizarCuenta, 1000);
-</script>
-  function activarMusica() {
-  document.getElementById("musica").play();
-}
-
-function mostrarGracias() {
-  document.getElementById("gracias").style.display = "flex";
-
-  setTimeout(function () {
-    document.getElementById("gracias").style.display = "none";
-  }, 3000);
-}
-<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2c2c4b4e4b.mp3?filename=romantic-piano-110012.mp3" type="audio/mpeg">
-</audio>
-
-<button class="musica-btn" onclick="activarMusica()">♫</button>
-
-<div id="gracias" class="gracias">
-  <div>
-    <h2>¡Gracias por confirmar!</h2>
-    <p>Melanie te espera para compartir una noche inolvidable.</p>
-  </div>
-</div>
 </body>
 </html>
