@@ -1,282 +1,130 @@
-³*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+body {
+  margin: 0;
+  background: #030303;
+  color: #f4f4f4;
+  font-family: Georgia, serif;
+  overflow-x: hidden;
 }
 
-body{
-  background:#000;
-  color:white;
-  font-family:'Cormorant Garamond',serif;
-  overflow-x:hidden;
-}
-
-.hero{
-  min-height:100vh;
-  padding:28px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background:
-    radial-gradient(circle at top,#333 0%,#050505 45%,#000 100%);
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.18), transparent 8%),
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,.12), transparent 10%),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,.14), transparent 9%);
+  pointer-events: none;
 }
 
-  .card{
-    position: relative;
-    overflow: hidden;
-  }
-  width:100%;
-  max-width:720px;
-  padding:50px 26px;
-  text-align:center;
-  border:2px solid #bfbfbf;
-  border-radius:34px;
-  background:rgba(0,0,0,.88);
-  box-shadow:
-    0 0 35px rgba(255,255,255,.18),
-    inset 0 0 30px rgba(255,255,255,.06);
-  overflow:hidden;
+body::after {
+  content: "";
+  position: fixed;
+  top: -40%;
+  left: -80%;
+  width: 80%;
+  height: 180%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
+  transform: rotate(25deg);
+  animation: brillo 7s infinite linear;
+  pointer-events: none;
 }
 
-.card:before,
-.card:after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%);
-  filter:blur(25px);
-  opacity:.35;
+@keyframes brillo {
+  from { left: -80%; }
+  to { left: 120%; }
 }
 
-.card:before{
-  top:-70px;
-  left:-70px;
+.invitacion {
+  max-width: 520px;
+  margin: auto;
+  padding: 35px 28px 60px;
+  text-align: center;
+  position: relative;
 }
 
-.card:after{
-  bottom:-70px;
-  right:-70px;
+.decoracion {
+  font-size: 45px;
+  color: silver;
+  text-shadow: 0 0 15px white;
 }
 
-.intro{
-  font-size:18px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:#dcdcdc;
-  margin-bottom:18px;
+.frase {
+  font-size: 25px;
+  line-height: 1.8;
 }
 
-.numero{
-  font-size:110px;
-  line-height:.85;
-  font-weight:700;
-  color:#f5f5f5;
-  text-shadow:0 0 18px rgba(255,255,255,.45);
+.linea {
+  color: silver;
+  font-size: 25px;
+  margin: 25px 0;
 }
 
-.anos{
-  font-family:'Great Vibes',cursive;
-  font-size:58px;
-  margin-top:-10px;
-  color:#e5e5e5;
+.datos {
+  text-align: left;
+  font-size: 23px;
+  line-height: 1.8;
 }
 
-h1{
-  font-family:'Great Vibes',cursive;
-  font-size:86px;
-  color:white;
-  margin:20px 0 28px;
-  text-shadow:0 0 20px rgba(255,255,255,.4);
+h2 {
+  letter-spacing: 12px;
+  font-size: 27px;
+  color: silver;
 }
 
-.frase{
-  font-size:23px;
-  line-height:1.6;
-  margin-bottom:28px;
+.contador {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0 35px;
 }
 
-.info p{
-  font-size:23px;
-  margin:13px 0;
+.contador div {
+  width: 25%;
 }
 
-.contador{
-  margin:32px 0 24px;
-  padding:18px;
-  border-top:1px solid rgba(255,255,255,.35);
-  border-bottom:1px solid rgba(255,255,255,.35);
+.contador span {
+  font-size: 48px;
+  color: silver;
+  text-shadow: 0 0 12px white;
 }
 
-.contador p{
-  font-size:20px;
-  letter-spacing:4px;
-  text-transform:uppercase;
+.contador small {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
-#cuenta{
-  margin-top:10px;
-  font-size:23px;
-  color:#f1f1f1;
+.boton {
+  display: block;
+  margin: 20px auto;
+  padding: 22px 15px;
+  border-radius: 50px;
+  border: 2px solid silver;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 18px rgba(255,255,255,.55);
+  background: linear-gradient(90deg, #111, #333, #111);
 }
 
-.botones{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-  margin-top:28px;
+.secundario {
+  background: transparent;
 }
 
-.boton{
-  display:block;
-  width:100%;
-  padding:17px 20px;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:23px;
-  font-weight:700;
-  transition:.3s;
+.firma {
+  margin-top: 45px;
+  color: silver;
+  text-shadow: 0 0 15px white;
 }
 
-.principal{
-  background:linear-gradient(135deg,#777,#f2f2f2,#777);
-  color:#000;
+.numero {
+  font-size: 85px;
+  font-weight: bold;
 }
 
-.secundario{
-  border:2px solid #bfbfbf;
-  color:white;
-  background:rgba(255,255,255,.04);
-}
-
-.boton:hover{
-  transform:scale(1.03);
-}
-
-.sparkles{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background-image:
-    radial-gradient(circle,#fff 1px,transparent 1px),
-    radial-gradient(circle,#ccc 1px,transparent 1px);
-  background-size:60px 60px,95px 95px;
-  opacity:.18;
-  animation:brillo 12s linear infinite;
-}
-
-@keyframes brillo{
-  from{transform:translateY(0);}
-  to{transform:translateY(-80px);}
-}
-
-@media(max-width:600px){
-  .card{
-    padding:42px 22px;
-  }
-
-  .numero{
-    font-size:92px;
-  }
-
-  .anos{
-    font-size:50px;
-  }
-
-  h1{
-    font-size:72px;
-  }
-
-  .frase,
-  .info p,
-  .boton,
-  #cuenta{
-    font-size:20px;
-  }
-}
-.card{
-  animation:entrada 1.3s ease;
-}
-
-@keyframes entrada{
-  from{
-    opacity:0;
-    transform:translateY(40px) scale(.96);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
-}
-
-.musica-btn{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  border:2px solid #c0c0c0;
-  background:#000;
-  color:#fff;
-  font-size:25px;
-  z-index:999;
-}
-
-.gracias{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.82);
-  z-index:1000;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:25px;
-}
-
-.gracias div{
-  border:2px solid #c0c0c0;
-  border-radius:25px;
-  padding:35px 25px;
-  background:#050505;
-  box-shadow:0 0 30px rgba(255,255,255,.25);
-}
-
-.gracias h2{
-  font-size:34px;
-}
-
-.gracias p{
-  font-size:22px;
-  margin-top:15px;
-}
-  /* Efecto de brillo */
-body::before{
-    content:"";
-    position:fixed;
-    top:-50%;
-    left:-50%;
-    width:200%;
-    height:200%;
-    background:linear-gradient(
-        120deg,
-        transparent 40%,
-        rgba(255,215,0,.15) 50%,
-        transparent 60%
-    );
-    transform:rotate(25deg);
-    animation:brillo 8s linear infinite;
-    pointer-events:none;
-    z-index:9999;
-}
-
-@keyframes brillo{
-    from{
-        transform:translateX(-100%) rotate(25deg);
-    }
-    to{
-        transform:translateX(100%) rotate(25deg);
-    }
+.nombre {
+  font-size: 45px;
+  font-style: italic;
 }
